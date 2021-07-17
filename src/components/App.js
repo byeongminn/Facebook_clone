@@ -21,9 +21,18 @@ function App() {
     })
   }, [])
 
+  const refreshUser = () => {
+    const user = authService.currentUser;
+    setUserObj({
+      displayName: user.displayName,
+      uid: user.uid,
+      updateProfile: args => user.updateProfile(args)
+    })
+  }
+
   return (
     <div>
-      {init ? <AppRouter isLoggedIn={Boolean(userObj)} userObj={userObj} /> : "잠시만 기다려주세요..."}
+      {init ? <AppRouter isLoggedIn={Boolean(userObj)} userObj={userObj} refreshUser={refreshUser} /> : "잠시만 기다려주세요..."}
     </div>
   );
 }

@@ -28,7 +28,7 @@ const Join = () => {
         try {
             if (password === checkPassword) {
                 await authService.createUserWithEmailAndPassword(email, password);
-                history.push("/");
+                history.push("/Introduce");
             } else {
                 setError("비밀번호가 서로 일치하지 않습니다.");
             }
@@ -59,7 +59,7 @@ const Join = () => {
                 <input name="checkPassword" type="password" placeholder="비밀번호 확인" required onChange={onChange} />
                 <input type="submit" value="가입하기" />
             </form>
-            {error}
+            <div>{error}</div>
             <button onClick={onCancelClick}>취소</button>
         </div>
     )
