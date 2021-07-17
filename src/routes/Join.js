@@ -43,6 +43,10 @@ const Join = () => {
         }
     }
 
+    const onCancelClick = () => {
+        history.push("/");
+    }
+
     return (
         <div>
             <div>
@@ -56,6 +60,7 @@ const Join = () => {
                 <input type="submit" value="가입하기" />
             </form>
             {error}
+            <button onClick={onCancelClick}>취소</button>
         </div>
     )
 }

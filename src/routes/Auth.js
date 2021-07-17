@@ -46,7 +46,7 @@ const Auth = ( {userObj} ) => {
                 <input name="password" type="password" placeholder="비밀번호" required onChange={onChange} />
                 <input type="submit" value="로그인" />
             </form>
-            {error}
+            <div>{error}</div>
             <Link to="/Join">새 계정 만들기</Link>
         </div>
     )
