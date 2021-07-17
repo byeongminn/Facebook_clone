@@ -11,8 +11,8 @@ function App() {
       if (user) {
         setUserObj({
           displayName: user.displayName,
-          uid:user.uid,
-          updateProfile: (args) => user.updateProfile(args)
+          uid: user.uid,
+          updateProfile: args => user.updateProfile(args)
         })
       } else {
         setUserObj(null);
@@ -23,7 +23,7 @@ function App() {
 
   return (
     <div>
-      {init ? <AppRouter isLoggedIn={Boolean(userObj)} /> : "잠시만 기다려주세요..."}
+      {init ? <AppRouter isLoggedIn={Boolean(userObj)} userObj={userObj} /> : "잠시만 기다려주세요..."}
     </div>
   );
 }
