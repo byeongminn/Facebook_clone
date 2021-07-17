@@ -2,6 +2,7 @@ import React from "react";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import Auth from "../routes/Auth";
 import Home from "../routes/Home";
+import Join from "../routes/Join";
 import Profile from "../routes/Profile";
 
 const AppRouter = ( {isLoggedIn, userObj} ) => {
@@ -10,17 +11,20 @@ const AppRouter = ( {isLoggedIn, userObj} ) => {
             <Switch>
                 {isLoggedIn ?
                     <>
-                        <Route path="/">
+                        <Route exact path="/">
                             <Home />
                         </Route>
-                        <Route path="/Profile">
+                        <Route exact path="/Profile">
                             <Profile />
                         </Route>
                     </>
                     :
                     <>
-                        <Route path="/">
+                        <Route exact path="/">
                             <Auth />
+                        </Route>
+                        <Route exact path="/Join">
+                            <Join />
                         </Route>
                     </>
                 }

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { authService } from "../fbase";
+import { Link } from "react-router-dom";
 
 const Auth = ( {userObj} ) => {
     const [email, setEmail] = useState("");
@@ -46,6 +47,7 @@ const Auth = ( {userObj} ) => {
                 <input type="submit" value="로그인" />
             </form>
             {error}
+            <Link to="/Join">새 계정 만들기</Link>
         </div>
     )
 }
