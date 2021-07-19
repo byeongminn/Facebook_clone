@@ -14,21 +14,15 @@ const AppRouter = ( {isLoggedIn, userObj, refreshUser} ) => {
             <Switch>
                 {isLoggedIn ?
                     <>
-                        {userObj.displayName === null?
-                            <>
-                                <Route exact path="/Introduce">
-                                    <Introduce userObj={userObj} refreshUser={refreshUser} />
-                                </Route>
-                            </>
-                            :
-                            <>
-                                <Route exact path="/">
-                                    <Home userObj={userObj} />
-                                </Route>
-                                <Route exact path="/Profile">
-                                    <Profile />
-                                </Route>
-                            </>}
+                        <Route exact path="/Introduce">
+                            <Introduce userObj={userObj} refreshUser={refreshUser} />
+                        </Route>
+                        <Route exact path="/">
+                            <Home userObj={userObj} />
+                        </Route>
+                        <Route exact path="/Profile">
+                            <Profile />
+                        </Route>
                     </>
                     :
                     <>

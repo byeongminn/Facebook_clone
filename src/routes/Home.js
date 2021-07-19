@@ -1,12 +1,14 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 
 const Home = ( {userObj} ) => {
-    console.log(userObj);
+    const history = useHistory();
 
     return (
         <div>
-            Home
+            {!userObj.displayName ? history.push("/Introduce") : <span>Home</span>}
         </div>
+        
     )
 }
 
