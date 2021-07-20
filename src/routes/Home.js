@@ -72,7 +72,7 @@ const Home = ( {userObj, refreshUser} ) => {
                 <input type="file" accept="image/*" onChange={onFileChange} />
             </form>
             {posts.map(post =>
-                <Post key={post.id} postObj={post} isOwner={userObj.uid === post.createId} />)}
+                <Post key={post.id} userObj={userObj} postObj={post} isOwner={userObj.uid === post.createId} />)}
         </div>
     )
 }
