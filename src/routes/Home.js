@@ -1,22 +1,20 @@
 import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
 import Post from "../components/Post";
 import { dbService, storageService } from "../fbase";
 import { v4 as uuidv4 } from "uuid";
+import Introduce from "./Introduce";
 
-const Home = ( {userObj} ) => {
+const Home = ( {userObj, refreshUser} ) => {
     const [post, setPost] = useState("");
     const [posts, setPosts] = useState([]);
     const [attachment, setAttachment] = useState();
-
-    const history = useHistory();
 
     useEffect(() => {
         dbService.collection("posts").orderBy("createAt", "desc").onSnapshot(snapshot => {
             const postArray = snapshot.docs.map((doc) => ({
                 id: doc.id,
                 ...doc.data()
-            }))
+            }));
             setPosts(postArray);
         })
     }, [])
@@ -68,16 +66,13 @@ const Home = ( {userObj} ) => {
 
     return (
         <div>
-            {!userObj.displayName ? history.push("/Introduce") : 
-                <>
-                    <form onSubmit={onSubmit}>
-                        <input type="text" placeholder={`${userObj.displayName}님, 무슨 생각을 하고 계신가요?`} value={post} required onChange={onChange} />
-                        <input type="file" accept="image/*" onChange={onFileChange} />
-                    </form>
-                    {posts.map(post =>
-                        <Post key={post.id} postObj={post} isOwner={userObj.uid === post.createId} /> )}
-                </>
-            }
+            <Introduce userObj={userObj} refreshUser={refreshUser} />
+            <form onSubmit={onSubmit}>
+                <input type="text" placeholder={`${userObj.displayName}님, 무슨 생각을 하고 계신가요?`} value={post} required onChange={onChange} />
+                <input type="file" accept="image/*" onChange={onFileChange} />
+            </form>
+            {posts.map(post =>
+                <Post key={post.id} postObj={post} isOwner={userObj.uid === post.createId} />)}
         </div>
     )
 }

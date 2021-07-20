@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import Modal from "react-modal";
 
 const Introduce = ( {userObj, refreshUser} ) => {
     const [name, setName] = useState("");
-
-    const history = useHistory();
 
     const onChange = (event) => {
         const {
@@ -19,16 +17,17 @@ const Introduce = ( {userObj, refreshUser} ) => {
             displayName: name,
         })
         refreshUser();
-        history.push("/");
     }
 
     return (
         <div>
-            <span>나를 소개해주세요.</span>
-            <form onSubmit={onSubmit}>
-                <input type="text" placeholder="이름" required onChange={onChange} />
-                <input type="submit" value="저장하기" />
-            </form>
+            <Modal isOpen={!userObj.displayName}>
+                <span>나를 소개해주세요.</span>
+                <form onSubmit={onSubmit}>
+                    <input type="text" placeholder="이름" required onChange={onChange} />
+                    <input type="submit" value="저장하기" />
+                </form>
+            </Modal>
         </div>
     )
 }

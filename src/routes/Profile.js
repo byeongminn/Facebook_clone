@@ -5,8 +5,8 @@ import { authService } from "../fbase";
 const Profile = () => {
     const history = useHistory();
 
-    const onLogoutClick = () => {
-        authService.signOut();
+    const onLogoutClick = async () => {
+        await authService.signOut();
         history.push("/");
     }
 

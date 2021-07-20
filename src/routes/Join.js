@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { authService } from "../fbase";
-import { useHistory } from "react-router-dom";
 import Modal from "react-modal";
 
 const Join = () => {
@@ -9,8 +8,6 @@ const Join = () => {
     const [checkPassword, setCheckPassword] = useState("");
     const [error, setError] = useState("");
     const [modalIsOpen, setModalIsOpen] = useState(false);
-
-    const history = useHistory();
 
     const onChange = (event) => {
         const {
@@ -30,7 +27,6 @@ const Join = () => {
         try {
             if (password === checkPassword) {
                 await authService.createUserWithEmailAndPassword(email, password);
-                history.push("/Introduce");
             } else {
                 setError("비밀번호가 서로 일치하지 않습니다.");
             }
