@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { authService } from "../fbase";
 import { useHistory } from "react-router-dom";
+import Modal from "react-modal";
 
 const Join = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [checkPassword, setCheckPassword] = useState("");
     const [error, setError] = useState("");
+    const [modalIsOpen, setModalIsOpen] = useState(false);
 
     const history = useHistory();
 
@@ -43,24 +45,33 @@ const Join = () => {
         }
     }
 
-    const onCancelClick = () => {
-        history.push("/");
+    Modal.setAppElement("#root");
+
+    const openModal= () => {
+        setModalIsOpen(true);
+    }
+
+    const closeModal = () => {
+        setModalIsOpen(false);
     }
 
     return (
         <div>
-            <div>
-                <span>가입하기</span>
-                <span>빠르고 쉽습니다.</span>
-            </div>
-            <form onSubmit={onSubmit}>
-                <input name="email" type="email" placeholder="이메일" required onChange={onChange} />
-                <input name="password" type="password" placeholder="새 비밀번호" required onChange={onChange} />
-                <input name="checkPassword" type="password" placeholder="비밀번호 확인" required onChange={onChange} />
-                <input type="submit" value="가입하기" />
-            </form>
-            <div>{error}</div>
-            <button onClick={onCancelClick}>취소</button>
+            <button onClick={openModal}>새 계정 만들기</button>
+            <Modal isOpen={modalIsOpen}>
+                <div>
+                    <span>가입하기</span>
+                    <span>빠르고 쉽습니다.</span>
+                </div>
+                <form onSubmit={onSubmit}>
+                    <input name="email" type="email" placeholder="이메일" required onChange={onChange} />
+                    <input name="password" type="password" placeholder="새 비밀번호" required onChange={onChange} />
+                    <input name="checkPassword" type="password" placeholder="비밀번호 확인" required onChange={onChange} />
+                    <input type="submit" value="가입하기" />
+                </form>
+                <div>{error}</div>
+                <button onClick={closeModal}>취소</button>
+            </Modal>
         </div>
     )
 }
