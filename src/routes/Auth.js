@@ -34,20 +34,20 @@ const Auth = () => {
     }
 
     return (
-        <div>
-            <div>
+        <div id="auth__container">
+            <div id="welcome">
                 <span>facebook</span>
-                <div>
-                    <span>Facebook에서 전세계에 있는 친구, 가족, 지인들과 함께 이야기를 나눠보세요.</span>                   
-                </div>
+                <span>Facebook에서 전세계에 있는 친구, 가족, 지인들과 함께 이야기를 나눠보세요.</span>
             </div>
-            <form onSubmit={onSubmit}>
-                <input name="email" type="email" placeholder="이메일" required onChange={onChange} />
-                <input name="password" type="password" placeholder="비밀번호" required onChange={onChange} />
-                <input type="submit" value="로그인" />
-            </form>
-            <div>{error}</div>
-            <Join />
+            <div id="login__container">
+                <form id="login__form" onSubmit={onSubmit}>
+                    <input id="login__email" name="email" type="email" placeholder="이메일" required onChange={onChange} />
+                    <input id="login__password" name="password" type="password" placeholder="비밀번호" required onChange={onChange} />
+                    <input id="login__submit" type="submit" value="로그인" />
+                </form>
+                <div>{error}</div>
+                <Join />
+            </div>
         </div>
     )
 }

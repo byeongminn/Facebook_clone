@@ -1,0 +1,186 @@
+body {
+    margin: 0;
+    background-color: #F0F2F5;
+}
+
+/* Navigation */
+
+#nav__container {
+    margin: 0;
+    padding: 0;
+    height: 60px;
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    box-shadow: 0 0 5px lightgrey;
+}
+
+#nav__container li {
+    list-style: none;
+}
+
+#nav__container #nav__left,
+#nav__container #nav__middle,
+#nav__container #nav__right {
+    display: flex;
+    align-content: center;
+    align-items: center;
+}
+
+#nav__left #logo__icon {
+    padding: 0px 7px 0px 15px;
+    width: 40px;
+    height: 40px;
+    color: #2e81f4;
+}
+
+#search__container {
+    padding: 0px 15px;
+    display: flex;
+    align-items: center;
+    width: 210px;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    background-color: #F0F2F5;
+}
+
+#search__container #search__input {
+    padding: 0 0 0 5px;
+    height: 30px;
+    background-color: #F0F2F5;
+    font-size: 15px;
+    border: none;
+    outline: none;
+}
+
+#nav__middle li {
+    margin: 0 5px;
+}
+
+#nav__middle #option {
+    width: 130px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-size: 25px;
+    color: grey;
+}
+
+#nav__middle #option:hover {
+    background-color: #F0F2F5;
+}
+
+#nav__right #profile {
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    width: 95px;
+    height: 35px;
+    text-decoration-line: none;
+    border-radius: 17px;
+}
+
+#nav__right #profile:hover {
+    background-color: #F0F2F5;
+}
+
+#profile svg {
+    padding: 0 5px;
+    font-size: 30px;
+    color: grey;
+}
+
+#profile span {
+    font-size: 15px;
+    font-weight: 800;
+    color: black;
+}
+
+/* Auth */
+#auth__container {
+    padding: 120px 0;
+    display: flex;
+    justify-content: center;
+}
+
+#auth__container #welcome {
+    width: 580px;
+    padding-top: 55px;
+    display: flex;
+    flex-direction: column;
+}
+
+#welcome span:first-child {
+    font-size: 60px;
+    font-weight: 900;
+    color: #2e81f4;
+}
+
+#welcome span:last-child {
+    width: 500px;
+    height: 90px;
+    font-size: 28px;
+}
+
+#auth__container #login__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    height: 350px;
+    padding: 12px 0;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 2px lightgrey;
+}
+
+#login__container #login__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#login__form #login__email,
+#login__form #login__password {
+    width: 330px;
+    height: 22px;
+    margin: 6px 0;
+    padding: 14px 16px;
+    border: 1px solid lightgrey;
+    border-radius: 7px;
+}
+
+#login__form #login__submit {
+    margin: 10px 0;
+    width: 362px;
+    height: 50px;
+    background-color: #2e81f4;
+    border: none;
+    border-radius: 7px;
+    color: white;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+/* Join */
+#join__container #join__btn {
+    width: 140px;
+    height: 50px;
+    padding: 0 10px;
+    background-color: #42b72a;
+    color: white;
+    font-size: 17px;
+    font-weight: 800;
+    border: none;
+    border-radius: 7px;
+}
+
+#join__container #join__modal {
+    width: 430px;
+    height: 510px;
+}

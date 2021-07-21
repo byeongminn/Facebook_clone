@@ -52,21 +52,23 @@ const Join = () => {
     }
 
     return (
-        <div>
-            <button onClick={openModal}>새 계정 만들기</button>
+        <div id="join__container">
+            <button id="join__btn" onClick={openModal}>새 계정 만들기</button>
             <Modal isOpen={modalIsOpen}>
                 <div>
                     <span>가입하기</span>
                     <span>빠르고 쉽습니다.</span>
                 </div>
-                <form onSubmit={onSubmit}>
-                    <input name="email" type="email" placeholder="이메일" required onChange={onChange} />
-                    <input name="password" type="password" placeholder="새 비밀번호" required onChange={onChange} />
-                    <input name="checkPassword" type="password" placeholder="비밀번호 확인" required onChange={onChange} />
-                    <input type="submit" value="가입하기" />
-                </form>
-                <div>{error}</div>
-                <button onClick={closeModal}>취소</button>
+                <div>
+                    <form onSubmit={onSubmit}>
+                        <input name="email" type="email" placeholder="이메일" required onChange={onChange} />
+                        <input name="password" type="password" placeholder="새 비밀번호" required onChange={onChange} />
+                        <input name="checkPassword" type="password" placeholder="비밀번호 확인" required onChange={onChange} />
+                        <input type="submit" value="가입하기" />
+                    </form>
+                    <div>{error}</div>
+                    <button onClick={closeModal}>취소</button>
+                </div>
             </Modal>
         </div>
     )
