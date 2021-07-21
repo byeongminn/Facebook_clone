@@ -26,7 +26,10 @@ const Profile = ( {userObj} ) => {
 
     return (
         <div>
-            <button onClick={onLogoutClick}>로그아웃</button>
+            <div>
+                <h1>{userObj.displayName}</h1>
+                <button onClick={onLogoutClick}>로그아웃</button>
+            </div>
             <PostFactory userObj={userObj} />
             {posts.map(post =>
                 <Post key={post.id} userObj={userObj} postObj={post} isOwner={userObj.uid === post.createId} />)}

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Post from "../components/Post";
 import { dbService } from "../fbase";
-import Introduce from "./Introduce";
+import Introduce from "../components/Introduce";
 import PostFactory from "../components/PostFactory";
 
 const Home = ( {userObj, refreshUser} ) => {
