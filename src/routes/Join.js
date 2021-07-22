@@ -48,29 +48,36 @@ const Join = () => {
     }
 
     const closeModal = () => {
+        setError("");
         setModalIsOpen(false);
     }
 
     return (
-        <div id="join__container">
-            <button id="join__btn" onClick={openModal}>새 계정 만들기</button>
-            <Modal isOpen={modalIsOpen}>
-                <div>
-                    <span>가입하기</span>
-                    <span>빠르고 쉽습니다.</span>
-                </div>
-                <div>
-                    <form onSubmit={onSubmit}>
-                        <input name="email" type="email" placeholder="이메일" required onChange={onChange} />
-                        <input name="password" type="password" placeholder="새 비밀번호" required onChange={onChange} />
-                        <input name="checkPassword" type="password" placeholder="비밀번호 확인" required onChange={onChange} />
-                        <input type="submit" value="가입하기" />
-                    </form>
-                    <div>{error}</div>
-                    <button onClick={closeModal}>취소</button>
-                </div>
-            </Modal>
-        </div>
+        <>
+            <div id="join__btn__container">
+                <button id="join__btn" onClick={openModal}>새 계정 만들기</button>
+            </div>
+            <div id="join__modal__container">
+                <Modal isOpen={modalIsOpen} overlayClassName="join__modal__overlay" className="join__modal__content">
+                    <div id="join__title__container">
+                        <div id="join__title">
+                            <div>가입하기</div>
+                            <div>빠르고 쉽습니다.</div>
+                        </div>
+                        <button onClick={closeModal}>✖</button>
+                    </div>
+                    <div id="join__form__container">
+                        <form id="join__form" onSubmit={onSubmit}>
+                            <input name="email" type="email" placeholder="이메일" required onChange={onChange} />
+                            <input name="password" type="password" placeholder="새 비밀번호" required onChange={onChange} />
+                            <input name="checkPassword" type="password" placeholder="비밀번호 확인" required onChange={onChange} />
+                            {error && <div>{error}</div>}
+                            <input type="submit" value="가입하기" />
+                        </form>
+                    </div>
+                </Modal>
+            </div>
+        </>
     )
 }
 

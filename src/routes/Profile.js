@@ -22,7 +22,7 @@ const Profile = ( {userObj} ) => {
             }));
             setPosts(postArray);
         });
-    }, [])
+    }, [userObj])
 
     return (
         <div>

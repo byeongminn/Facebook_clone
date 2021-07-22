@@ -132,7 +132,7 @@ body {
     flex-direction: column;
     align-items: center;
     width: 400px;
-    height: 350px;
+    height: 330px;
     padding: 12px 0;
     background-color: white;
     border-radius: 10px;
@@ -170,7 +170,16 @@ body {
 }
 
 /* Join */
-#join__container #join__btn {
+#join__btn__container {
+    width: 360px;
+    height: 60px;
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#join__btn__container #join__btn {
     width: 140px;
     height: 50px;
     padding: 0 10px;
@@ -182,7 +191,114 @@ body {
     border-radius: 7px;
 }
 
-#join__container #join__modal {
+.join__modal__overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+.join__modal__content {
     width: 430px;
-    height: 510px;
+    min-height: 340px;
+    background-color: white;
+    border: 1px solid lightgray;
+    overflow-y: auto;
+}
+
+.join__modal__content #join__title__container {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 16px;
+    border-bottom: 1px solid lightgray;
+}
+
+#join__title div:first-child {
+    font-size: 32px;
+    font-weight: 600;
+}
+
+#join__title div:last-child {
+    font-size: 15px;
+    color: #606770;
+}
+
+#join__title__container button {
+    padding: 0;
+    width: 24px;
+    height: 26px;
+    font-size: 18px;
+    background-color: white;
+    border: none;
+}
+
+#join__form__container {
+    padding: 11px 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+#join__form__container #join__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#join__form input {
+    margin: 5px 0;
+    padding: 11px;
+    width: 372px;
+    height: 18px;
+    background-color: #F0F2F5;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    font-size: 15px;
+    outline: none;
+}
+
+#join__form input:last-child {
+    margin: 30px 0 10px 0;
+    padding: 0px;
+    width: 200px;
+    height: 40px;
+    background-color: #42b72a;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 800;
+    color: white;
+}
+
+#join__form div {
+    margin-top: 20px;
+    padding: 10px;
+    width: 377px;
+    height: 20px;
+    background-color: rgb(255, 210, 218);
+    border: 1px solid lightcoral;
+    border-radius: 5px;
+}
+
+/* ResetPassword */
+
+#reset__btn__container {
+    padding-bottom: 15px;
+    width: 360px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid lightgrey;
+}
+
+#reset__btn__container #reset__btn {
+    color: #2e81f4;
+    background-color: white;
+    border: none;
+}
+
+#reset__btn__container #reset__btn:hover {
+    text-decoration-line: underline;
+    cursor: pointer;
 }
