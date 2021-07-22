@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ResetPassword from "../components/ResetPassword";
 import { authService } from "../fbase";
 import Join from "./Join";
 
@@ -36,8 +37,8 @@ const Auth = () => {
     return (
         <div id="auth__container">
             <div id="welcome">
-                <span>facebook</span>
-                <span>Facebook에서 전세계에 있는 친구, 가족, 지인들과 함께 이야기를 나눠보세요.</span>
+                <span>jacebook</span>
+                <span>Jacebook에서 전세계에 있는 친구, 가족, 지인들과 함께 이야기를 나눠보세요.</span>
             </div>
             <div id="login__container">
                 <form id="login__form" onSubmit={onSubmit}>
@@ -46,6 +47,7 @@ const Auth = () => {
                     <input id="login__submit" type="submit" value="로그인" />
                 </form>
                 <div>{error}</div>
+                <ResetPassword />
                 <Join />
             </div>
         </div>

@@ -153,6 +153,8 @@ body {
     padding: 14px 16px;
     border: 1px solid lightgrey;
     border-radius: 7px;
+    font-size: 17px;
+    outline-color: #2e81f4;
 }
 
 #login__form #login__submit {
