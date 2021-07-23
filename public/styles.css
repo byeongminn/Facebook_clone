@@ -283,7 +283,7 @@ body {
 
 /* ResetPassword */
 
-#reset__btn__container {
+#reset__openBtn__container {
     padding-bottom: 15px;
     width: 360px;
     height: 30px;
@@ -292,13 +292,139 @@ body {
     border-bottom: 1px solid lightgrey;
 }
 
-#reset__btn__container #reset__btn {
+#reset__openBtn__container #reset__btn {
     color: #2e81f4;
     background-color: white;
     border: none;
 }
 
-#reset__btn__container #reset__btn:hover {
+#reset__openBtn__container #reset__btn:hover {
     text-decoration-line: underline;
+    cursor: pointer;
+}
+
+.reset__modal__overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+.reset__modal__content {
+    width: 420px;
+    min-height: 200px;
+    background-color: white;
+    border: 1px solid lightgray;
+}
+
+#reset__title {
+    padding: 18px;
+    font-size: 20px;
+    font-weight: 800;
+    border-bottom: 1px solid lightgray;
+}
+
+#reset__form__container {
+    padding: 18px;
+    border-bottom: 1px solid lightgray;
+}
+
+#reset__btn__container {
+    padding: 18px;
+    display: flex;
+    float: right;
+}
+
+#reset__btn__container button {
+    margin: 0 4px;
+    padding: 0 20px;
+    height: 35px;
+    font-size: 15px;
+    font-weight: 800;
+    border: none;
+    border-radius: 10px;
+}
+
+#reset__btn__container button:hover {
+    cursor: pointer;
+}
+
+#reset__btn__container button:first-child {
+    background-color: #e4e6eb;
+}
+
+#reset__btn__container button:last-child {
+    background-color: #2e81f4;
+    color: white;
+}
+
+#reset__form__container #reset__form {
+    margin-top: 18px;
+}
+
+#reset__form__container #reset__form input {
+    width: 347px;
+    padding: 16px;
+    font-size: 16px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    outline: none;
+}
+
+#reset__form__container #reset__error {
+    margin-bottom: 18px;
+    padding: 10px;
+    background-color: rgb(255, 210, 218);
+    border: 1px solid lightcoral;
+}
+
+#reset__error div:first-child {
+    margin-bottom: 3px;
+    font-size: 15px;
+    font-weight: 800;
+}
+
+#reset__error div:last-child {
+    font-size: 14px;
+}
+
+.reset__ok__overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+.reset__ok__content {
+    width: 400px;
+    min-height:  80px;
+    background-color: white;
+    border: 1px solid lightgray;
+    outline: none;
+}
+
+#reset__ok {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#reset__ok div {
+    padding: 18px;
+}
+
+#reset__ok button {
+    margin-bottom: 18px;
+    padding: 0 20px;
+    height: 35px;
+    font-size: 15px;
+    font-weight: 800;
+    border: none;
+    border-radius: 10px;
+    background-color: #e4e6eb;
     cursor: pointer;
 }

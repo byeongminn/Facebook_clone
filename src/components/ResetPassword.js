@@ -33,6 +33,7 @@ const ResetPassword = () => {
         event.preventDefault();
         try {
             await authService.sendPasswordResetEmail(email);
+            setEmail("");
             setDisplayError(false);
             setOkModalIsOpen(true);
         } catch (error) {
@@ -45,32 +46,34 @@ const ResetPassword = () => {
 
     return (
         <>
-            <div id="reset__btn__container">
+            <div id="reset__openBtn__container">
                 <button id="reset__btn" onClick={openModal}>비밀번호를 잊으셨나요?</button>
             </div>
             <div id="reset__modal__container">
-                <Modal isOpen={modalIsOpen} onRequestClose={closeModal}>
-                    <div>
+                <Modal isOpen={modalIsOpen} onRequestClose={closeModal} overlayClassName="reset__modal__overlay" className="reset__modal__content">
+                    <div id="reset__title">
                         <span>비밀번호 초기화</span>
                     </div>
-                    <div>
-                        {displayError && <div>
-                            <span>비밀번호 초기화 실패</span>
-                            <span>{error}</span>
+                    <div id="reset__form__container">
+                        {displayError && <div id="reset__error">
+                            <div>비밀번호 초기화 실패</div>
+                            <div>{error}</div>
                         </div>}
                         <span>비밀번호를 초기화하려면 이메일 주소를 입력하세요.</span>
-                        <form onSubmit={onSubmit}>
+                        <form id="reset__form" onSubmit={onSubmit}>
                             <input type="email" placeholder="이메일" required onChange={onChange} />
                         </form>
                     </div>
-                    <div>
+                    <div id="reset__btn__container">
                         <button onClick={closeModal}>취소</button>
                         <button onClick={onSubmit}>확인</button>
                     </div>
                 </Modal>
-                <Modal isOpen={okModalIsOpen}>
-                    <span>해당 이메일을 확인해 주세요.</span>
-                    <button onClick={closeModal}>닫기</button>
+                <Modal isOpen={okModalIsOpen} overlayClassName="reset__ok__overlay" className="reset__ok__content" >
+                    <div id="reset__ok">
+                        <div>해당 이메일을 확인해 주세요.</div>
+                        <button onClick={closeModal}>닫기</button>
+                    </div>
                 </Modal>
             </div>
         </>
