@@ -17,13 +17,14 @@ const Introduce = ( {userObj, refreshUser} ) => {
             displayName: name,
         })
         refreshUser();
+        setName("");
     }
 
     return (
-        <div>
-            <Modal isOpen={!userObj.displayName}>
-                <span>나를 소개해주세요.</span>
-                <form onSubmit={onSubmit}>
+        <div id="intro__container">
+            <Modal isOpen={!userObj.displayName} overlayClassName="intro__modal__overlay" className="intro__modal__content" >
+                <div id="intro__title">나를 소개해주세요.</div>
+                <form id="intro__form" onSubmit={onSubmit}>
                     <input type="text" placeholder="이름" required onChange={onChange} />
                     <input type="submit" value="저장하기" />
                 </form>

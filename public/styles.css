@@ -428,3 +428,54 @@ body {
     background-color: #e4e6eb;
     cursor: pointer;
 }
+
+/* Introduce */
+.intro__modal__overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+.intro__modal__content {
+    width: 400px;
+    min-height: auto;
+    background-color: white;
+    border: 1px solid lightgray;
+    outline: none;
+}
+
+#intro__title {
+    padding: 18px;
+    font-size: 20px;
+    font-weight: 800;
+    border-bottom: 1px solid lightgray;
+}
+
+#intro__form {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#intro__form input:first-child {
+    width: 325px;
+    margin-bottom: 16px;
+    padding: 16px;
+    font-size: 16px;
+    outline: none;
+}
+
+#intro__form input:last-child {
+    padding: 0 20px;
+    height: 35px;
+    font-size: 15px;
+    font-weight: 800;
+    border: none;
+    border-radius: 10px;
+    background-color: #e4e6eb;
+    cursor: pointer;
+}
