@@ -25,8 +25,8 @@ const Profile = ( {userObj} ) => {
     }, [userObj])
 
     return (
-        <div>
-            <div>
+        <div id="profile__container">
+            <div id="profile__user">
                 <h1>{userObj.displayName}</h1>
                 <button onClick={onLogoutClick}>로그아웃</button>
             </div>

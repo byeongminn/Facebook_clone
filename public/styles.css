@@ -479,3 +479,256 @@ body {
     background-color: #e4e6eb;
     cursor: pointer;
 }
+
+/* Home */
+#home__container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+}
+
+#home__container #home__middle__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* PostFactory */
+
+#postFactory__container {
+    width: 594px;
+    padding: 10px 16px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 3px 1px lightgray;
+    margin-bottom: 17px;
+}
+
+#postFactory__container #postFactory__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#postFactory__form div:first-child {
+    border-bottom: 1px solid lightgray;
+}
+
+#postFactory__form input:first-child {
+    width: 570px;
+    height: 24px;
+    border: none;
+    border-radius: 24px;
+    outline: none;
+    padding: 8px 12px;
+    background-color: #F0F2F5;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+#postFactory__form div:last-child {
+    margin-top: 10px;
+}
+
+#postFactory__form #postFactory__file__label {
+    padding: 10px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-weight: 800;
+}
+
+#postFactory__form #postFactory__file__label:hover {
+    background-color: #F0F2F5;
+    cursor: pointer;
+}
+
+#postFactory__form #postFactory__file__label svg {
+    margin-right: 10px;
+    font-size: 30px;
+    color: #42b72a;
+}
+
+#postFactory__form #postFactory__file {
+    display: none;
+}
+
+/* Post */
+#post__container {
+    margin-bottom: 17px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 3px 1px lightgray;
+    width: 626px;
+}
+
+#post__container #post__top {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 16px;
+}
+
+#post__top #post__creator {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+#post__top #post__top__btn button {
+    padding: 3px 6px;
+    margin: 0px 2px;
+}
+
+#post__container #post__content {
+    padding: 0 16px 12px 16px;
+}
+
+#post__middle #post__image {
+    padding: 0 0 16px 0;
+}
+
+.post__editModal__overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(255, 255, 255, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.post__editModal__content {
+    width: 550px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 3px lightgray;
+}
+
+#post__edit__container #post__edit__top,
+#post__edit__cancel__container #post__edit__cancel__top {
+    padding: 12px 16px;
+    border-bottom: 1px solid lightgray;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+#post__edit__container #post__edit__middle,
+#post__edit__cancel__container #post__edit__cancel__middle {
+    padding: 12px 16px;
+}
+
+#post__edit__container #post__edit__middle input {
+    width: 490px;
+    padding: 8px 12px;
+    font-size: 15px;
+    outline: none;
+}
+
+#post__edit__container #post__edit__bottom,
+#post__edit__cancel__container #post__edit__cancel__bottom {
+    padding: 12px 16px;
+    float: right;
+}
+
+#post__edit__container #post__edit__bottom button,
+#post__edit__cancel__container #post__edit__cancel__bottom button {
+    margin: 0 3px;
+    padding: 0 20px;
+    height: 35px;
+    font-size: 15px;
+    font-weight: 800;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#post__edit__container #post__edit__bottom button:first-child,
+#post__edit__cancel__container #post__edit__cancel__bottom button:first-child {
+    background-color: #e4e6eb;
+}
+
+#post__edit__container #post__edit__bottom button:last-child,
+#post__edit__cancel__container #post__edit__cancel__bottom button:last-child {
+    background-color: #2e81f4;
+    color: white;
+}
+
+.post__delModal__overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(255, 255, 255, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.post__delModal__content {
+    width: 550px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 3px lightgray;
+}
+
+#post__del__container {
+    display: flex;
+    flex-direction: column;
+}
+
+#post__del__container #post__del__title {
+    padding: 12px 16px;
+    border-bottom: 1px solid lightgray;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+#post__del__container #post__del__content {
+    padding: 12px 16px;
+}
+
+#post__del__container #post__del__btn {
+    padding: 12px 16px;
+}
+
+#post__del__container #post__del__btn button {
+    float: right;
+    margin: 0 3px;
+    padding: 0 20px;
+    height: 35px;
+    font-size: 15px;
+    font-weight: 800;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#post__del__container #post__del__btn button:first-child {
+    background-color: #2e81f4;
+    color: white;
+}
+
+#post__del__container #post__del__btn button:last-child {
+    background-color: #e4e6eb;
+}
+
+/* Profile */
+#profile__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#profile__container #profile__user {
+    width: 100%;
+    background-color: white;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#profile__user button {
+    margin: 0 10px;
+    width: 80px;
+    height: 40px;
+}

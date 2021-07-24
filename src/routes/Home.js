@@ -18,12 +18,22 @@ const Home = ( {userObj, refreshUser} ) => {
     }, [])
 
     return (
-        <div>
+        <>
             <Introduce userObj={userObj} refreshUser={refreshUser} />
-            <PostFactory userObj={userObj} />
-            {posts.map(post =>
-                <Post key={post.id} userObj={userObj} postObj={post} isOwner={userObj.uid === post.createId} />)}
-        </div>
+            <div id="home__container">
+                <div id="home__left__container">
+                    각종 메뉴
+                </div>
+                <div id="home__middle__container">
+                    <PostFactory userObj={userObj} />
+                    {posts.map(post =>
+                        <Post key={post.id} userObj={userObj} postObj={post} isOwner={userObj.uid === post.createId} />)}
+                </div>
+                <div id="home__right__container">
+                    친구 목록
+                </div>
+            </div>
+        </>
     )
 }
 
